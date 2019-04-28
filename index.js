@@ -38,14 +38,29 @@ const _sort = (versionA, versionB, order = 1) => {
 
 /**
  *
- * @param {object} object 版本信息
+ * @param {array} arr 版本信息数组 [ { version: '1.0.1' }, { version: '1.2.1' } ]
  * @param {number} order 排序 1:正序 -1:倒序
  * @author i5tong i5tong@sian.cn
  * @private
  */
-const _sortObject = (object, order = 1) => {
-  object.sort((objA, objB) => _sort(objA, objB, order));
+const _sortArrayObj = (arr, options = { key, order }) => {
+  const { key, order = 1 } = options;
+  arr.sort((objA, objB) => _sort(objA[key], objB[key], order));
+  return arr;
 };
 
-exports.sort = _sort;
-exports.sortObject = _sortObject;
+/**
+ *
+ * @param {array} arr 版本信息数组 [ '1.0.1', '1.2.1' ]
+ * @param {number} order 排序 1:正序 -1:倒序
+ * @author i5tong i5tong@sian.cn
+ * @private
+ */
+const _sortArray = (arr, options) => {
+  const { order = 1 } = options;
+  arr.sort((objA, objB) => _sort(objA, objB, order));
+  return arr;
+};
+
+exports.sortArray = _sortArray;
+exports.sortArrayObj = _sortArrayObj;

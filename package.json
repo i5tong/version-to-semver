@@ -1,0 +1,19 @@
+{
+  "name": "version-to-semver",
+  "version": "1.0.0",
+  "description": "version to semver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/i5tong/version-to-semver.git"
+  },
+  "author": "i5tong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/i5tong/version-to-semver/issues"
+  },
+  "homepage": "https://github.com/i5tong/version-to-semver#readme"
+}

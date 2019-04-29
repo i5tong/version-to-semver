@@ -29,14 +29,14 @@ sort.sortArrayObj(data, { key: 'version', order: -1 }); // [ { version: '3.2.1' 
 ### Options
 
 ```js
-var results = sort.sortArrayObj(data, options);
+var results = sort.sortArray(data, options);
 options: { order: 1 }
 options: { order: -1 }
 ```
 
 
 ```js
-var results = sort.sortArray(data, options);
+var results = sort.sortArrayObj(data, options);
 options: { key: 'version', order: 1 }
 options: { key: 'version', order: -1 }
 ```

@@ -38,27 +38,29 @@ const _sort = (versionA, versionB, order = 1) => {
 
 /**
  *
- * @param {array} arr 版本信息数组 [ { version: '1.0.1' }, { version: '1.2.1' } ]
- * @param {number} order 排序 1:正序 -1:倒序
+ * @param {array} arr 版本信息数组 [ '1.0.1', '1.2.1' ]
+ * @param {object} options 参数 { order: 1 }
+ * @return {array} 数组
  * @author i5tong i5tong@sian.cn
  * @private
  */
-const _sortArrayObj = (arr, options = { key, order }) => {
-  const { key, order = 1 } = options;
-  arr.sort((objA, objB) => _sort(objA[key], objB[key], order));
+const _sortArray = (arr, options = {}) => {
+  const { order = 1 } = options;
+  arr.sort((objA, objB) => _sort(objA, objB, order));
   return arr;
 };
 
 /**
  *
- * @param {array} arr 版本信息数组 [ '1.0.1', '1.2.1' ]
- * @param {number} order 排序 1:正序 -1:倒序
+ * @param {array} arr 版本信息数组 [ { version: '1.0.1' }, { version: '1.2.1' } ]
+ * @param {object} options 参数 参数 { key: 'version', order: 1 }
+ * @return {array} 数组
  * @author i5tong i5tong@sian.cn
  * @private
  */
-const _sortArray = (arr, options) => {
-  const { order = 1 } = options;
-  arr.sort((objA, objB) => _sort(objA, objB, order));
+const _sortArrayObj = (arr, options = {}) => {
+  const { key = 'version', order = 1 } = options;
+  arr.sort((objA, objB) => _sort(objA[key], objB[key], order));
   return arr;
 };
 
